@@ -1,0 +1,87 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.placement:SKILLSHALA >----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ SKILLSHALA ---
+[INFO] Deleting C:\Users\anand\Downloads\SKILLSHALA\SKILLSHALA\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ SKILLSHALA ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ SKILLSHALA ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 36 source files with javac [forked debug parameters release 21] to target\classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] java.lang.ExceptionInInitializerError
+	at lombok.javac.apt.LombokProcessor.placePostCompileAndDontMakeForceRoundDummiesHook(LombokProcessor.java:174)
+	at lombok.javac.apt.LombokProcessor.init(LombokProcessor.java:96)
+	at lombok.core.AnnotationProcessor$JavacDescriptor.want(AnnotationProcessor.java:160)
+	at lombok.core.AnnotationProcessor.init(AnnotationProcessor.java:213)
+	at lombok.launch.AnnotationProcessorHider$AnnotationProcessor.init(AnnotationProcessor.java:64)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$ProcessorState.<init>(JavacProcessingEnvironment.java:633)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$DiscoveredProcessors$ProcessorStateIterator.next(JavacProcessingEnvironment.java:760)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.discoverAndRunProcs(JavacProcessingEnvironment.java:856)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.run(JavacProcessingEnvironment.java:1199)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.doProcessing(JavacProcessingEnvironment.java:1312)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.processAnnotations(JavaCompiler.java:1272)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:948)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:319)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:178)
+	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:66)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:52)
+Caused by: java.lang.NoSuchFieldException: com.sun.tools.javac.code.TypeTag :: UNKNOWN
+	at lombok.permit.Permit.getField(Permit.java:144)
+	at lombok.javac.JavacTreeMaker$SchroedingerType.getFieldCached(JavacTreeMaker.java:171)
+	at lombok.javac.JavacTreeMaker$TypeTag.typeTag(JavacTreeMaker.java:259)
+	at lombok.javac.Javac.<clinit>(Javac.java:186)
+	... 16 more
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.759 s
+[INFO] Finished at: 2026-04-04T22:09:04+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project SKILLSHALA: Compilation failure
+[ERROR] java.lang.ExceptionInInitializerError
+[ERROR] 	at lombok.javac.apt.LombokProcessor.placePostCompileAndDontMakeForceRoundDummiesHook(LombokProcessor.java:174)
+[ERROR] 	at lombok.javac.apt.LombokProcessor.init(LombokProcessor.java:96)
+[ERROR] 	at lombok.core.AnnotationProcessor$JavacDescriptor.want(AnnotationProcessor.java:160)
+[ERROR] 	at lombok.core.AnnotationProcessor.init(AnnotationProcessor.java:213)
+[ERROR] 	at lombok.launch.AnnotationProcessorHider$AnnotationProcessor.init(AnnotationProcessor.java:64)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$ProcessorState.<init>(JavacProcessingEnvironment.java:633)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$DiscoveredProcessors$ProcessorStateIterator.next(JavacProcessingEnvironment.java:760)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.discoverAndRunProcs(JavacProcessingEnvironment.java:856)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.run(JavacProcessingEnvironment.java:1199)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.doProcessing(JavacProcessingEnvironment.java:1312)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.processAnnotations(JavaCompiler.java:1272)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:948)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:319)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:178)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:66)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:52)
+[ERROR] Caused by: java.lang.NoSuchFieldException: com.sun.tools.javac.code.TypeTag :: UNKNOWN
+[ERROR] 	at lombok.permit.Permit.getField(Permit.java:144)
+[ERROR] 	at lombok.javac.JavacTreeMaker$SchroedingerType.getFieldCached(JavacTreeMaker.java:171)
+[ERROR] 	at lombok.javac.JavacTreeMaker$TypeTag.typeTag(JavacTreeMaker.java:259)
+[ERROR] 	at lombok.javac.Javac.<clinit>(Javac.java:186)
+[ERROR] 	... 16 more
+[ERROR] 
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+

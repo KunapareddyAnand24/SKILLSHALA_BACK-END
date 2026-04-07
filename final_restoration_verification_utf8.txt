@@ -1,0 +1,157 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.placement:SKILLSHALA >----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ SKILLSHALA ---
+[INFO] Deleting C:\Users\anand\Downloads\SKILLSHALA\SKILLSHALA\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ SKILLSHALA ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ SKILLSHALA ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 36 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[37,31] cannot find symbol
+  symbol:   method getStudentName()
+  location: variable dto of type com.placement.dto.ApplicationDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[38,28] cannot find symbol
+  symbol:   method getJobTitle()
+  location: variable dto of type com.placement.dto.ApplicationDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[39,31] cannot find symbol
+  symbol:   method getCompanyName()
+  location: variable dto of type com.placement.dto.ApplicationDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[58,31] cannot find symbol
+  symbol:   method getStudentName()
+  location: variable app of type com.placement.model.Application
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[59,28] cannot find symbol
+  symbol:   method getJobTitle()
+  location: variable app of type com.placement.model.Application
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[60,31] cannot find symbol
+  symbol:   method getCompanyName()
+  location: variable app of type com.placement.model.Application
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[27,30] cannot find symbol
+  symbol:   method getEmployerId()
+  location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[31,26] cannot find symbol
+  symbol:   method getSalary()
+  location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[32,24] cannot find symbol
+  symbol:   method getType()
+  location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[34,30] cannot find symbol
+  symbol:   method getDepartment()
+  location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[35,28] cannot find symbol
+  symbol:   method getOpenings()
+  location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[38,28] cannot find symbol
+  symbol:   method getDeadline()
+  location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[39,12] cannot find symbol
+  symbol:   method setPostedAt(java.time.LocalDate)
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[54,30] cannot find symbol
+  symbol:   method getEmployerId()
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[58,26] cannot find symbol
+  symbol:   method getSalary()
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[59,24] cannot find symbol
+  symbol:   method getType()
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[61,30] cannot find symbol
+  symbol:   method getDepartment()
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[62,28] cannot find symbol
+  symbol:   method getOpenings()
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[65,28] cannot find symbol
+  symbol:   method getDeadline()
+  location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[66,28] cannot find symbol
+  symbol:   method getPostedAt()
+  location: variable job of type com.placement.model.Job
+[INFO] 20 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.560 s
+[INFO] Finished at: 2026-04-04T22:13:11+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project SKILLSHALA: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[37,31] cannot find symbol
+[ERROR]   symbol:   method getStudentName()
+[ERROR]   location: variable dto of type com.placement.dto.ApplicationDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[38,28] cannot find symbol
+[ERROR]   symbol:   method getJobTitle()
+[ERROR]   location: variable dto of type com.placement.dto.ApplicationDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[39,31] cannot find symbol
+[ERROR]   symbol:   method getCompanyName()
+[ERROR]   location: variable dto of type com.placement.dto.ApplicationDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[58,31] cannot find symbol
+[ERROR]   symbol:   method getStudentName()
+[ERROR]   location: variable app of type com.placement.model.Application
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[59,28] cannot find symbol
+[ERROR]   symbol:   method getJobTitle()
+[ERROR]   location: variable app of type com.placement.model.Application
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/ApplicationService.java:[60,31] cannot find symbol
+[ERROR]   symbol:   method getCompanyName()
+[ERROR]   location: variable app of type com.placement.model.Application
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[27,30] cannot find symbol
+[ERROR]   symbol:   method getEmployerId()
+[ERROR]   location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[31,26] cannot find symbol
+[ERROR]   symbol:   method getSalary()
+[ERROR]   location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[32,24] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[34,30] cannot find symbol
+[ERROR]   symbol:   method getDepartment()
+[ERROR]   location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[35,28] cannot find symbol
+[ERROR]   symbol:   method getOpenings()
+[ERROR]   location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[38,28] cannot find symbol
+[ERROR]   symbol:   method getDeadline()
+[ERROR]   location: variable dto of type com.placement.dto.JobDTO
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[39,12] cannot find symbol
+[ERROR]   symbol:   method setPostedAt(java.time.LocalDate)
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[54,30] cannot find symbol
+[ERROR]   symbol:   method getEmployerId()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[58,26] cannot find symbol
+[ERROR]   symbol:   method getSalary()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[59,24] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[61,30] cannot find symbol
+[ERROR]   symbol:   method getDepartment()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[62,28] cannot find symbol
+[ERROR]   symbol:   method getOpenings()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[65,28] cannot find symbol
+[ERROR]   symbol:   method getDeadline()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] /C:/Users/anand/Downloads/SKILLSHALA/SKILLSHALA/src/main/java/com/placement/service/JobService.java:[66,28] cannot find symbol
+[ERROR]   symbol:   method getPostedAt()
+[ERROR]   location: variable job of type com.placement.model.Job
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+

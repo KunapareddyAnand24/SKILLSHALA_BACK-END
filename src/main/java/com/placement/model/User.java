@@ -16,10 +16,16 @@ public class User {
     private String password;
     private String role; // STUDENT, EMPLOYER, OFFICER, ADMIN
     private String avatar;
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String resumeUrl; // For Students
     private String skills;    // Comma-separated (e.g., "Java, SQL")
     private String status = "active";
     private String companyName; // For Employers
+    private Double cgpa;        // For Students
+    private String university;  // For Students
+    private String department;  // For Students
+    private Integer graduationYear; // For Students
     private LocalDate createdAt = LocalDate.now();
     private LocalDate lastLoginAt;
 
@@ -50,5 +56,13 @@ public class User {
     public void setCreatedAt(LocalDate createdAt) { this.createdAt = createdAt; }
     public LocalDate getLastLoginAt() { return lastLoginAt; }
     public void setLastLoginAt(LocalDate lastLoginAt) { this.lastLoginAt = lastLoginAt; }
+    public Double getCgpa() { return cgpa; }
+    public void setCgpa(Double cgpa) { this.cgpa = cgpa; }
+    public String getUniversity() { return university; }
+    public void setUniversity(String university) { this.university = university; }
+    public String getDepartment() { return department; }
+    public void setDepartment(String department) { this.department = department; }
+    public Integer getGraduationYear() { return graduationYear; }
+    public void setGraduationYear(Integer graduationYear) { this.graduationYear = graduationYear; }
 }
  

@@ -12,6 +12,10 @@ public class UserDTO {
     private String skills;
     private String status;
     private String companyName;
+    private Double cgpa;
+    private String university;
+    private String department;
+    private Integer graduationYear;
     private LocalDate createdAt;
     private LocalDate lastLoginAt;
 
@@ -40,5 +44,13 @@ public class UserDTO {
     public void setCreatedAt(LocalDate createdAt) { this.createdAt = createdAt; }
     public LocalDate getLastLoginAt() { return lastLoginAt; }
     public void setLastLoginAt(LocalDate lastLoginAt) { this.lastLoginAt = lastLoginAt; }
+    public Double getCgpa() { return cgpa; }
+    public void setCgpa(Double cgpa) { this.cgpa = cgpa; }
+    public String getUniversity() { return university; }
+    public void setUniversity(String university) { this.university = university; }
+    public String getDepartment() { return department; }
+    public void setDepartment(String department) { this.department = department; }
+    public Integer getGraduationYear() { return graduationYear; }
+    public void setGraduationYear(Integer graduationYear) { this.graduationYear = graduationYear; }
 }
  

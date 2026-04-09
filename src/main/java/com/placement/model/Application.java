@@ -16,6 +16,8 @@ public class Application {
     private String jobTitle;
     private String companyName;
     private String status = "applied"; // applied, shortlisted, rejected, selected
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String resumeUrl;
     private LocalDate appliedAt = LocalDate.now();
 

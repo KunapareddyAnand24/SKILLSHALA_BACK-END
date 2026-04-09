@@ -17,6 +17,7 @@ public class JobDTO {
     private String status;
     private LocalDate deadline;
     private LocalDate postedAt;
+    private Integer matchScore; // Dynamic field for matching results
 
     public JobDTO() {}
 
@@ -49,5 +50,7 @@ public class JobDTO {
     public void setDeadline(LocalDate deadline) { this.deadline = deadline; }
     public LocalDate getPostedAt() { return postedAt; }
     public void setPostedAt(LocalDate postedAt) { this.postedAt = postedAt; }
+    public Integer getMatchScore() { return matchScore; }
+    public void setMatchScore(Integer matchScore) { this.matchScore = matchScore; }
 }
  

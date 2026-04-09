@@ -11,6 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/jobs")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skill-shala.netlify.app"})
 public class JobController {
 
     @Autowired
@@ -25,6 +26,12 @@ public class JobController {
     @PreAuthorize("hasAnyRole('EMPLOYER', 'OFFICER', 'ADMIN')")
     public List<JobDTO> getByEmployerId(@PathVariable Long employerId) {
         return jobService.getJobsByEmployer(employerId);
+    }
+
+    @GetMapping("/matched/{studentId}")
+    @PreAuthorize("hasAnyRole('STUDENT', 'ADMIN', 'OFFICER')")
+    public List<JobDTO> getMatchedJobs(@PathVariable Long studentId) {
+        return jobService.getMatchedJobs(studentId);
     }
 
     @PostMapping

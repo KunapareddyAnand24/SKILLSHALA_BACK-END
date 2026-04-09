@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skill-shala.netlify.app"})
 public class UserController {
 
     @Autowired
@@ -20,8 +21,13 @@ public class UserController {
     private FileStorageService fileStorageService;
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('OFFICER', 'ADMIN')")
-    public List<UserDTO> getAllUsers() {
+    @PreAuthorize("hasAnyRole('OFFICER', 'ADMIN', 'EMPLOYER', 'STUDENT')")
+    public List<UserDTO> getAllUsers(@RequestParam(required = false) String status) {
+        if (status != null && !status.isEmpty()) {
+            return userService.getAllUsers().stream()
+                    .filter(u -> status.equalsIgnoreCase(u.getStatus()))
+                    .collect(java.util.stream.Collectors.toList());
+        }
         return userService.getAllUsers();
     }
 

@@ -25,6 +25,9 @@ public class ApplicationService {
     @Autowired
     private NotificationService notificationService;
 
+    @Autowired
+    private InterviewService interviewService;
+
     public List<ApplicationDTO> getAllApplications() {
         return applicationRepository.findAll().stream()
                 .map(this::convertToDTO)
@@ -32,9 +35,7 @@ public class ApplicationService {
     }
 
     public List<ApplicationDTO> getApplicationsByStudent(Long studentId) {
-        // Assume repository has this, otherwise we add it.
-        return applicationRepository.findAll().stream()
-                .filter(a -> a.getStudentId().equals(studentId))
+        return applicationRepository.findByStudentId(studentId).stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
@@ -48,6 +49,7 @@ public class ApplicationService {
         app.setJobTitle(dto.getJobTitle());
         app.setCompanyName(dto.getCompanyName());
         app.setStatus("applied");
+        app.setResumeUrl(dto.getResumeUrl()); // Added to fix blank resume issue
         app.setAppliedAt(LocalDate.now());
         
         Application savedApp = applicationRepository.save(app);
@@ -59,6 +61,14 @@ public class ApplicationService {
                 job.getEmployerId(),
                 "APPLICATION",
                 "New application from " + dto.getStudentName() + " for " + job.getTitle(),
+                savedApp.getId()
+            );
+
+            // Notify student
+            notificationService.createNotification(
+                dto.getStudentId(),
+                "APPLICATION_SUCCESS",
+                "Successfully applied for " + job.getTitle() + " at " + job.getCompanyName(),
                 savedApp.getId()
             );
         }
@@ -73,13 +83,46 @@ public class ApplicationService {
         app.setStatus(status);
         Application updatedApp = applicationRepository.save(app);
 
-        // Notify student
+        // Notify student with detailed message
+        String message;
+        switch (status.toLowerCase()) {
+            case "shortlisted":
+                message = "Congratulations! You have been shortlisted for " + updatedApp.getJobTitle() + " at " + updatedApp.getCompanyName() + ". Keep an eye out for interview details.";
+                break;
+            case "selected":
+                message = "Great news! You have been SELECTED for " + updatedApp.getJobTitle() + " at " + updatedApp.getCompanyName() + ". Welcome to the team!";
+                break;
+            case "rejected":
+                message = "Thank you for your interest in " + updatedApp.getJobTitle() + " at " + updatedApp.getCompanyName() + ". Unfortunately, we have decided to move forward with other candidates at this time.";
+                break;
+            case "interview":
+                message = "You have been invited for an INTERVIEW for " + updatedApp.getJobTitle() + " at " + updatedApp.getCompanyName() + ". Please check your dashboard for the schedule.";
+                break;
+            default:
+                message = "Your application for " + updatedApp.getJobTitle() + " at " + updatedApp.getCompanyName() + " has been updated to: " + status;
+        }
+
         notificationService.createNotification(
             updatedApp.getStudentId(),
             "STATUS_UPDATE",
-            "Your application for " + updatedApp.getJobTitle() + " has been updated to: " + status,
+            message,
             updatedApp.getId()
         );
+
+        // Auto-schedule interview record if status is interview
+        if ("interview".equalsIgnoreCase(status)) {
+            Job job = jobRepository.findById(updatedApp.getJobId()).orElse(null);
+            if (job != null) {
+                com.placement.dto.InterviewDTO interviewDTO = new com.placement.dto.InterviewDTO();
+                interviewDTO.setApplicationId(updatedApp.getId());
+                interviewDTO.setStudentId(updatedApp.getStudentId());
+                interviewDTO.setEmployerId(job.getEmployerId());
+                interviewDTO.setJobTitle(updatedApp.getJobTitle());
+                interviewDTO.setScheduledAt(java.time.LocalDateTime.now().plusDays(2)); // Default to 2 days later
+                interviewDTO.setLocation("Online - Google Meet");
+                interviewService.scheduleInterview(interviewDTO);
+            }
+        }
 
         return convertToDTO(updatedApp);
     }
@@ -93,6 +136,7 @@ public class ApplicationService {
         dto.setJobTitle(app.getJobTitle());
         dto.setCompanyName(app.getCompanyName());
         dto.setStatus(app.getStatus());
+        dto.setResumeUrl(app.getResumeUrl());
         dto.setAppliedAt(app.getAppliedAt());
         return dto;
     }

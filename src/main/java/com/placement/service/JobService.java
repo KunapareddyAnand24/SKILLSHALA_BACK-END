@@ -41,6 +41,21 @@ public class JobService {
                 .collect(Collectors.toList());
     }
 
+    public List<JobDTO> getMatchedJobs(Long studentId) {
+        User student = userRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Student not found"));
+        
+        return jobRepository.findAll().stream()
+                .filter(j -> "active".equalsIgnoreCase(j.getStatus()))
+                .map(j -> {
+                    JobDTO dto = convertToDTO(j);
+                    dto.setMatchScore(matchService.calculateMatch(student, j));
+                    return dto;
+                })
+                .sorted((a, b) -> b.getMatchScore().compareTo(a.getMatchScore()))
+                .collect(Collectors.toList());
+    }
+
     @Transactional
     public JobDTO createJob(JobDTO dto) {
         Job job = new Job();

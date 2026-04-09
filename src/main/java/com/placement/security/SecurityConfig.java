@@ -39,6 +39,8 @@ public class SecurityConfig {
         http.authorizeHttpRequests(auth -> auth
             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
             .requestMatchers("/api/auth/**").permitAll()
+            .requestMatchers("/api/debug/**").permitAll()
+            .requestMatchers("/uploads/**").permitAll()
             .requestMatchers("/api/jobs/**").hasAnyRole("STUDENT", "EMPLOYER", "OFFICER", "ADMIN")
             .requestMatchers("/api/applications/**").hasAnyRole("STUDENT", "EMPLOYER", "OFFICER", "ADMIN")
             .requestMatchers("/api/interviews/**").hasAnyRole("STUDENT", "EMPLOYER", "OFFICER", "ADMIN")
@@ -47,7 +49,8 @@ public class SecurityConfig {
             .requestMatchers("/api/users/**").hasAnyRole("STUDENT", "EMPLOYER", "OFFICER", "ADMIN")
             .requestMatchers("/api/notifications/**").hasAnyRole("STUDENT", "EMPLOYER", "OFFICER", "ADMIN")
             .anyRequest().authenticated()
-        );
+        )
+        .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
         
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         

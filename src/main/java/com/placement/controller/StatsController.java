@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/stats")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skill-shala.netlify.app"})
 public class StatsController {
 
     @Autowired

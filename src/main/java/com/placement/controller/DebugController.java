@@ -2,6 +2,12 @@ package com.placement.controller;
 
 import com.placement.model.User;
 import com.placement.repository.UserRepository;
+import com.placement.repository.JobRepository;
+import com.placement.repository.ApplicationRepository;
+import com.placement.repository.PlacementRepository;
+import com.placement.model.Job;
+import com.placement.model.Application;
+import com.placement.model.Placement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +21,15 @@ public class DebugController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private JobRepository jobRepository;
+
+    @Autowired
+    private ApplicationRepository applicationRepository;
+
+    @Autowired
+    private PlacementRepository placementRepository;
 
     @GetMapping("/users")
     public List<String> getAllUsers() {
@@ -32,6 +47,21 @@ public class DebugController {
                     return sb.toString();
                 })
                 .collect(Collectors.toList());
+    }
+
+    @GetMapping("/jobs")
+    public List<Job> getAllJobs() {
+        return jobRepository.findAll();
+    }
+
+    @GetMapping("/applications")
+    public List<Application> getAllApplications() {
+        return applicationRepository.findAll();
+    }
+
+    @GetMapping("/placements")
+    public List<Placement> getAllPlacements() {
+        return placementRepository.findAll();
     }
 
     @GetMapping("/repair-status")

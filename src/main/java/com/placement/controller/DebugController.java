@@ -50,18 +50,24 @@ public class DebugController {
     }
 
     @GetMapping("/jobs")
-    public List<Job> getAllJobs() {
-        return jobRepository.findAll();
+    public List<String> getAllJobs() {
+        return jobRepository.findAll().stream()
+                .map(j -> "ID: " + j.getId() + " | Title: " + j.getTitle() + " | Company: " + j.getCompanyName() + " | Openings: " + j.getOpenings() + " | Status: " + j.getStatus())
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/applications")
-    public List<Application> getAllApplications() {
-        return applicationRepository.findAll();
+    public List<String> getAllApplications() {
+        return applicationRepository.findAll().stream()
+                .map(a -> "ID: " + a.getId() + " | Job: " + a.getJobTitle() + " | Student: " + a.getStudentName() + " | Status: " + a.getStatus())
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/placements")
-    public List<Placement> getAllPlacements() {
-        return placementRepository.findAll();
+    public List<String> getAllPlacements() {
+        return placementRepository.findAll().stream()
+                .map(p -> "Placement ID: " + p.getId())
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/repair-status")
